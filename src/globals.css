@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Add this CSS rule */
+button {
+  cursor: pointer;
+}
