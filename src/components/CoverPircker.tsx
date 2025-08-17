@@ -12,7 +12,7 @@ interface CoverPickerProps {
   type?:  'color' | 'image'
 }
 
-function CoverPicker({ currentCover, onSelectColor, onClose, type, onSelectImage }: CoverPickerProps) {
+function CoverPicker({ currentCover, onSelectColor, onClose, onSelectImage }: CoverPickerProps) {
   const [activeTab, setActiveTab] = useState<'gallery' | 'upload'>('gallery');
   const pickerRef = useRef<HTMLDivElement>(null);
 

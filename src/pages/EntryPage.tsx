@@ -56,7 +56,7 @@ function EntryPage() {
       // You might want to fetch it from a backend here, or add it as an empty entry.
       // For this example, we'll add it as an empty one if it's not found.
       // In a real app, you'd likely fetch from a database.
-      dispatch(addEntry({ id: id, title: '', content: '', isFavorite: false }));
+      dispatch(addEntry({ id: id, title: '', content: '', isFavorite: false, updatedAt: Date.now() }));
     }
   }, [entry, id, dispatch]);
 
@@ -111,7 +111,8 @@ function EntryPage() {
         id: newEntryId,
         title: `${entry.title} (Copy)`, // Append "(Copy)" to the title
         content: entry.content,
-        isFavorite: entry.isFavorite
+        isFavorite: entry.isFavorite,
+        updatedAt: entry.updatedAt
       }));
       navigate(`/entry/${newEntryId}`); // Navigate to the cloned entry
     }
@@ -195,7 +196,7 @@ function EntryPage() {
               </summary>
 
 
-              <CoverPicker onSelectImage={onSelectImage} type={entry.coverType} currentCover={entry.coverValue} onClose={() => {}} onSelectColor={onSelectColor}></CoverPicker>
+              <CoverPicker onSelectImage={onSelectImage} currentCover={entry.coverValue} onClose={() => {}} onSelectColor={onSelectColor}></CoverPicker>
             </details>
 
           </div>
