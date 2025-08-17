@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from './redux/hooks';
 import { addEntry } from './redux/entries/entriesSlice'; // Import addEntry
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
@@ -10,7 +10,6 @@ import type { RootState } from './redux/store';
 function App() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-
   const entries = useAppSelector((state: RootState) => state.entries); // Get all entries from Redux store
 
   // Sort entries by updatedAt in descending order (latest first)

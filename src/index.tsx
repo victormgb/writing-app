@@ -6,7 +6,7 @@ import App from './App';
 import "./globals.css";
 
 import { Provider } from 'react-redux';
-import { store } from './redux/store';
+import { setupStore } from './redux/store';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Import routing components
 import EntryPage from './pages/EntryPage';
@@ -15,6 +15,9 @@ import Sidebar from './components/sidebar';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+const store = setupStore();
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>

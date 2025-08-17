@@ -17,7 +17,7 @@ export interface Entry {
   title: string;
   content: string;
   isFavorite: boolean;
-  coverType?: 'color' | 'image'; // New field to indicate cover type
+  coverType?: 'color' | 'image' | string; // New field to indicate cover type
   coverValue?: string; // New field for the cover color
   createdAt?: number; // New field: Timestamp of creation
   updatedAt: number; // New field: Timestamp of last update
